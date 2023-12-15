@@ -81,6 +81,23 @@ class SortedLinkedListTest {
     }
 
     @Test
+    void WHEN_adding_3_sorted_ints_THEN_ints_are_stored_in_sorted_order() {
+        var list = new SortedLinkedList();
+
+        var added1 = list.add(1);
+        var added2 = list.add(2);
+        var added3 = list.add(3);
+
+        assertThat(added1).isTrue();
+        assertThat(added2).isTrue();
+        assertThat(added3).isTrue();
+
+        assertThat(list.get(0)).isEqualTo(1);
+        assertThat(list.get(1)).isEqualTo(2);
+        assertThat(list.get(2)).isEqualTo(3);
+    }
+
+    @Test
     void WHEN_adding_3_unsorted_strings_THEN_string_are_stored_in_sorted_order() {
         var list = new SortedLinkedList();
 
@@ -95,6 +112,23 @@ class SortedLinkedListTest {
         assertThat(list.get(0)).isEqualTo("a");
         assertThat(list.get(1)).isEqualTo("b");
         assertThat(list.get(2)).isEqualTo("c");
+    }
+
+    @Test
+    void WHEN_adding_3_unsorted_ints_THEN_ints_are_stored_in_sorted_order() {
+        var list = new SortedLinkedList();
+
+        var added1 = list.add(10);
+        var added2 = list.add(30);
+        var added3 = list.add(-5);
+
+        assertThat(added1).isTrue();
+        assertThat(added2).isTrue();
+        assertThat(added3).isTrue();
+
+        assertThat(list.get(0)).isEqualTo(-5);
+        assertThat(list.get(1)).isEqualTo(10);
+        assertThat(list.get(2)).isEqualTo(30);
     }
 
     private static Stream<Arguments> provideParameters() {
