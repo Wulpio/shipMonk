@@ -1,0 +1,1 @@
+SortedLinkedList have method for adding new elements of type int or string. First successful insert will determine type of elements, which can be added. 
