@@ -22,9 +22,6 @@ public class SortedLinkedList {
             }
         }
 
-        if (typeOfList == Type.UNDEFINED) {
-            return false;
-        }
         if (!typeOfValue.equals(typeOfList)) {
             return false;
         }
